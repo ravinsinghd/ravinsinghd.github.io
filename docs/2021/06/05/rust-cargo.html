@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Rust programming #2 Cargo and Rust variables | Bits and Bytes</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="Rust programming #2 Cargo and Rust variables" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In this series we are learning Rust. if you want to follow from the start please go to this link, where we have all the post in the Rust series. on this post we are going to learn about tool called cargo." />
+<meta property="og:description" content="In this series we are learning Rust. if you want to follow from the start please go to this link, where we have all the post in the Rust series. on this post we are going to learn about tool called cargo." />
+<link rel="canonical" href="/2021/06/05/rust-cargo.html" />
+<meta property="og:url" content="/2021/06/05/rust-cargo.html" />
+<meta property="og:site_name" content="Bits and Bytes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-06-05T00:00:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Rust programming #2 Cargo and Rust variables" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"Rust programming #2 Cargo and Rust variables","dateModified":"2021-06-05T00:00:00+05:30","datePublished":"2021-06-05T00:00:00+05:30","mainEntityOfPage":{"@type":"WebPage","@id":"/2021/06/05/rust-cargo.html"},"url":"/2021/06/05/rust-cargo.html","description":"In this series we are learning Rust. if you want to follow from the start please go to this link, where we have all the post in the Rust series. on this post we are going to learn about tool called cargo.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Bits and Bytes" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Bits and Bytes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Rust programming #2 | Cargo and Rust variables</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-06-05T00:00:00+05:30" itemprop="datePublished">Jun 5, 2021
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>In this series we are learning Rust. if you want to follow from the start please go to this link, where we have all the post in the Rust series. on this post we are going to learn about tool called cargo.</p>
+
+<p>Cargo is a command line tool which will help you to scaffolding,building,test and manage packages for the Rust programmes. If you are used npm for nodejs, then cargo is similar to the Rust ecosystem. If you followed the previous post and installed Rust then you system already has cargo installed. To verify you can run below command and see if it’s log the cargo version</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cargo <span class="nt">--version</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>if you see any errors, commend that errors I will help you out.</p>
+</blockquote>
+
+<h4 id="scaffolding-project">Scaffolding project</h4>
+
+<p>let’s create one project with cargo and will go through the default directory structure. Go to any empty folder and run below command</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cargo new hello_cargo
+</code></pre></div></div>
+
+<p>It should create one binary application called hello_cargo. Open the folder in any editor, you will see the project with default folders and files like below</p>
+
+<p><img src="/assets/images/posts/cargo_and_rust_variable/cargo_default_folders.png" alt="cargo default folders" /></p>
+
+<blockquote>
+  <p>Ignore the target folder and cargo.lock file. I am using Rust extension in my editor, It will auto build any Rust project open in the editor.</p>
+</blockquote>
+
+<p>Let’s go through the files one by one</p>
+
+<h4 id="cargotoml">Cargo.toml</h4>
+
+<p>Every application created with cargo will have Cargo.toml file. It used for manage application metadata,configuration and dependencies. Open Cargo.toml file you will see configuration like below.</p>
+
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[package]</span>
+<span class="py">name</span> <span class="p">=</span> <span class="s">"hello_cargo"</span>
+<span class="py">version</span> <span class="p">=</span> <span class="s">"0.1.0"</span>
+<span class="py">edition</span> <span class="p">=</span> <span class="s">"2018"</span>
+
+<span class="c"># See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html</span>
+
+<span class="nn">[dependencies]</span>
+</code></pre></div></div>
+
+<p>The name property use to define name of the application. Here it’s take from the cargo new command argument.</p>
+
+<p>The version property defines the version for this application. if you are creating library which published in crates, then this version number will be used to manage release cycle and dependency management. Will learn how to create and publish crates in upcoming posts. For now keep the default value.</p>
+
+<p>The edition property defines which edition of the Rust compiler you are going to use for compile the application. Will learn about editions in later posts for now keep the default value.</p>
+
+<p>The dependencies section used for listing your dependencies for this application. As of now we do not have any dependencies for our application, So it is empty. When we are start expanding our application we can pull dependencies from crates and use in our application.</p>
+
+<h4 id="srcmainrs">src/main.rs</h4>
+
+<p>Cargo created main file inside the src folder. Currently main file has default function which will print “hello world” when you run it. when working with cargo you should add all your source file inside the src folder.</p>
+
+<h4 id="build">Build</h4>
+
+  </div><a class="u-url" href="/2021/06/05/rust-cargo.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Bits and Bytes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Bits and Bytes</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/jekyll"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">jekyll</span></a></li><li><a href="https://www.twitter.com/jekyllrb"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">jekyllrb</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

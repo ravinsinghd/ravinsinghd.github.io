@@ -7,8 +7,8 @@
 <meta name="generator" content="Jekyll v4.2.0" />
 <meta property="og:title" content="Rust programming #2 Cargo and Rust variables" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="In this series we are learning Rust. if you want to follow from the start please go to this link, where we have all the post in the Rust series. on this post we are going to learn about tool called cargo." />
-<meta property="og:description" content="In this series we are learning Rust. if you want to follow from the start please go to this link, where we have all the post in the Rust series. on this post we are going to learn about tool called cargo." />
+<meta name="description" content="Cargo" />
+<meta property="og:description" content="Cargo" />
 <link rel="canonical" href="https://ravinsinghd.github.io/bits-and-bytes/2021/06/05/rust-cargo.html" />
 <meta property="og:url" content="https://ravinsinghd.github.io/bits-and-bytes/2021/06/05/rust-cargo.html" />
 <meta property="og:site_name" content="Bits and Bytes" />
@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Rust programming #2 Cargo and Rust variables" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://ravinsinghd.github.io/bits-and-bytes/2021/06/05/rust-cargo.html"},"url":"https://ravinsinghd.github.io/bits-and-bytes/2021/06/05/rust-cargo.html","headline":"Rust programming #2 Cargo and Rust variables","dateModified":"2021-06-05T00:00:00+05:30","datePublished":"2021-06-05T00:00:00+05:30","description":"In this series we are learning Rust. if you want to follow from the start please go to this link, where we have all the post in the Rust series. on this post we are going to learn about tool called cargo.","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","headline":"Rust programming #2 Cargo and Rust variables","dateModified":"2021-06-05T00:00:00+05:30","datePublished":"2021-06-05T00:00:00+05:30","mainEntityOfPage":{"@type":"WebPage","@id":"https://ravinsinghd.github.io/bits-and-bytes/2021/06/05/rust-cargo.html"},"url":"https://ravinsinghd.github.io/bits-and-bytes/2021/06/05/rust-cargo.html","description":"Cargo","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/bits-and-bytes/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://ravinsinghd.github.io/bits-and-bytes/feed.xml" title="Bits and Bytes" /></head>
 <body><header class="site-header" role="banner">
@@ -47,7 +47,9 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>In this series we are learning Rust. if you want to follow from the start please go to this link, where we have all the post in the Rust series. on this post we are going to learn about tool called cargo.</p>
+    <h3 id="cargo">Cargo</h3>
+
+<p>In this series we are learning Rust. if you want to follow from the start please go to this link, where we have all the post in the Rust series. on this post we are going to learn about tool called cargo.</p>
 
 <p>Cargo is a command line tool which will help you to scaffolding,building,test and manage packages for the Rust programmes. If you are used npm for nodejs, then cargo is similar to the Rust ecosystem. If you followed the previous post and installed Rust then you system already has cargo installed. To verify you can run below command and see if it’s log the cargo version</p>
 
@@ -102,6 +104,62 @@
 <p>Cargo created main file inside the src folder. Currently main file has default function which will print “hello world” when you run it. when working with cargo you should add all your source file inside the src folder.</p>
 
 <h4 id="build">Build</h4>
+
+<p>Now open command prompt and navigate to the application folder. Then run the below command</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cargo build
+</code></pre></div></div>
+
+<p>Now cargo, build your application and create executable in the folder called target.You can run that application by running the executable file as shown in the below image</p>
+
+<p><img src="/bits-and-bytes/assets/images/posts/cargo_and_rust_variable/cargo_build.png" alt="cargo build" /></p>
+
+<p>In the command output this build mentioned as unoptimized. This is because cargo build by default will create the build with debug info and without much optimization. This build type should be used only for development and debug. This build type will be compile fast and run slow. For production you should compile application using below command</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cargo build <span class="nt">--release</span>
+</code></pre></div></div>
+
+<p>This build type will take additional time to compile the code but it will run fast.</p>
+
+<h4 id="run">Run</h4>
+
+<p>while you develop you may want to see the output quickly. For that you can use the run command as below.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cargo run
+</code></pre></div></div>
+
+<p>This command will compile your application and run the executable automatically.</p>
+
+<p><img src="/bits-and-bytes/assets/images/posts/cargo_and_rust_variable/cargo_run.png" alt="cargo run" /></p>
+
+<p>Incase you want to check if the application compile successfully but don’t want to run the application, you can use the below command</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cargo check
+</code></pre></div></div>
+
+<p>This command will compile and report if any error in the application. But will not create executable or run application. This will save time when working on bigger application.</p>
+
+<p><img src="/bits-and-bytes/assets/images/posts/cargo_and_rust_variable/cargo_check.png" alt="cargo check" /></p>
+
+<h3 id="rust-variables">Rust variables</h3>
+
+<p>Now let’s declare variable in our application and run it using cargo. open main.rs and type below code</p>
+
+<div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"The value of x {}"</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>let</strong> is the keyword we can use to declare the variable in Rust. Here we created variable called x and assign 10 as a value.</p>
+
+<p>In the next line we called print line macro. On this macro you can use the curly braces to print variables. So in run time rust will take the x value and print instead of the curly braces. Note i mentioned println! as macro not a function or keyword. Because while compile Rust compiler will update the println!. Will learn about macros in details in upcoming post.</p>
+
+<p>Now run this application using cargo run.</p>
+
+<p><img src="/bits-and-bytes/assets/images/posts/cargo_and_rust_variable/cargo_variable.png" alt="cargo variable" /></p>
+
+<p>In Rust all variables by default created as immutable. In the next post will see what is immutable variable and how to use mutable &amp; const variables.</p>
 
   </div><a class="u-url" href="/bits-and-bytes/2021/06/05/rust-cargo.html" hidden></a>
 </article>

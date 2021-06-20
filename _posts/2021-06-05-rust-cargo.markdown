@@ -23,7 +23,7 @@ cargo new hello_cargo
 
 It should create one binary application called hello_cargo. Open the folder in any editor, you will see the project with default folders and files like below
 
-![cargo default folders](/assets/images/posts/cargo_and_rust_variable/cargo_default_folders.png)
+![cargo default folders](assets/images/posts/cargo_and_rust_variable/cargo_default_folders.png)
 
 > Ignore the target folder and cargo.lock file. I am using Rust extension in my editor, It will auto build any Rust project open in the editor.
 

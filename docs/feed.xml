@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://ravinsinghd.github.io/bits-and-bytes/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ravinsinghd.github.io/bits-and-bytes/" rel="alternate" type="text/html" /><updated>2021-06-20T23:47:44+05:30</updated><id>https://ravinsinghd.github.io/bits-and-bytes/feed.xml</id><title type="html">Bits and Bytes</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Rust programming #2 | Cargo and Rust variables</title><link href="https://ravinsinghd.github.io/bits-and-bytes/2021/06/05/rust-cargo.html" rel="alternate" type="text/html" title="Rust programming #2 | Cargo and Rust variables" /><published>2021-06-05T00:00:00+05:30</published><updated>2021-06-05T00:00:00+05:30</updated><id>https://ravinsinghd.github.io/bits-and-bytes/2021/06/05/rust-cargo</id><content type="html" xml:base="https://ravinsinghd.github.io/bits-and-bytes/2021/06/05/rust-cargo.html">&lt;h3 id=&quot;cargo&quot;&gt;Cargo&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.learnbitsandbytes.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.learnbitsandbytes.com/" rel="alternate" type="text/html" /><updated>2021-06-21T00:08:33+05:30</updated><id>https://blog.learnbitsandbytes.com/feed.xml</id><title type="html">Bits and Bytes</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Rust programming #2 | Cargo and Rust variables</title><link href="https://blog.learnbitsandbytes.com/2021/06/05/rust-cargo.html" rel="alternate" type="text/html" title="Rust programming #2 | Cargo and Rust variables" /><published>2021-06-05T00:00:00+05:30</published><updated>2021-06-05T00:00:00+05:30</updated><id>https://blog.learnbitsandbytes.com/2021/06/05/rust-cargo</id><content type="html" xml:base="https://blog.learnbitsandbytes.com/2021/06/05/rust-cargo.html">&lt;h3 id=&quot;cargo&quot;&gt;Cargo&lt;/h3&gt;
 
 &lt;p&gt;In this series we are learning Rust. if you want to follow from the start please go to this link, where we have all the post in the Rust series. on this post we are going to learn about tool called cargo.&lt;/p&gt;
 
@@ -20,7 +20,7 @@
 
 &lt;p&gt;It should create one binary application called hello_cargo. Open the folder in any editor, you will see the project with default folders and files like below&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/bits-and-bytes/assets/images/posts/cargo_and_rust_variable/cargo_default_folder.png&quot; alt=&quot;cargo default folders&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/cargo_and_rust_variable/cargo_default_folder.png&quot; alt=&quot;cargo default folders&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Ignore the target folder and cargo.lock file. I am using Rust extension in my editor, It will auto build any Rust project open in the editor.&lt;/p&gt;
@@ -63,7 +63,7 @@
 
 &lt;p&gt;Now cargo, build your application and create executable in the folder called target.You can run that application by running the executable file as shown in the below image&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/bits-and-bytes/assets/images/posts/cargo_and_rust_variable/cargo_build.png&quot; alt=&quot;cargo build&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/cargo_and_rust_variable/cargo_build.png&quot; alt=&quot;cargo build&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In the command output this build mentioned as unoptimized. This is because cargo build by default will create the build with debug info and without much optimization. This build type should be used only for development and debug. This build type will be compile fast and run slow. For production you should compile application using below command&lt;/p&gt;
 
@@ -81,7 +81,7 @@
 
 &lt;p&gt;This command will compile your application and run the executable automatically.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/bits-and-bytes/assets/images/posts/cargo_and_rust_variable/cargo_run.png&quot; alt=&quot;cargo run&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/cargo_and_rust_variable/cargo_run.png&quot; alt=&quot;cargo run&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Incase you want to check if the application compile successfully but don’t want to run the application, you can use the below command&lt;/p&gt;
 
@@ -90,7 +90,7 @@
 
 &lt;p&gt;This command will compile and report if any error in the application. But will not create executable or run application. This will save time when working on bigger application.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/bits-and-bytes/assets/images/posts/cargo_and_rust_variable/cargo_check.png&quot; alt=&quot;cargo check&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/cargo_and_rust_variable/cargo_check.png&quot; alt=&quot;cargo check&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;rust-variables&quot;&gt;Rust variables&lt;/h3&gt;
 
@@ -108,9 +108,9 @@
 
 &lt;p&gt;Now run this application using cargo run.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/bits-and-bytes/assets/images/posts/cargo_and_rust_variable/cargo_variable.png&quot; alt=&quot;cargo variable&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/cargo_and_rust_variable/cargo_variable.png&quot; alt=&quot;cargo variable&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;In Rust all variables by default created as immutable. In the next post will see what is immutable variable and how to use mutable &amp;amp; const variables.&lt;/p&gt;</content><author><name></name></author><summary type="html">Cargo</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="https://ravinsinghd.github.io/bits-and-bytes/jekyll/update/2021/06/04/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2021-06-04T21:59:41+05:30</published><updated>2021-06-04T21:59:41+05:30</updated><id>https://ravinsinghd.github.io/bits-and-bytes/jekyll/update/2021/06/04/welcome-to-jekyll</id><content type="html" xml:base="https://ravinsinghd.github.io/bits-and-bytes/jekyll/update/2021/06/04/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+&lt;p&gt;In Rust all variables by default created as immutable. In the next post will see what is immutable variable and how to use mutable &amp;amp; const variables.&lt;/p&gt;</content><author><name></name></author><summary type="html">Cargo</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="https://blog.learnbitsandbytes.com/jekyll/update/2021/06/04/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2021-06-04T21:59:41+05:30</published><updated>2021-06-04T21:59:41+05:30</updated><id>https://blog.learnbitsandbytes.com/jekyll/update/2021/06/04/welcome-to-jekyll</id><content type="html" xml:base="https://blog.learnbitsandbytes.com/jekyll/update/2021/06/04/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
 &lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
 

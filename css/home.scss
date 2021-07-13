@@ -1,5 +1,27 @@
 ---
 ---
 
-@import 'header';
 @import 'base';
+@import 'header';
+
+.post-wrap {
+  margin: 24px 48px 24px 48px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.post {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0 1rem 1rem 0;
+  max-width: 29%;
+  .title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  .description {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+}

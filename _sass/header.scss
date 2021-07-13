@@ -2,12 +2,25 @@
 
 .header {
   border-bottom: 2px solid $primary-color;
-  background-image: url('/assets/images/home/test.png');
-  background-size: 100% 100%;
+  background-color: $primary-color;
   height: 25vh;
+}
+
+.nav-wrap {
+  display: flex;
+  flex-direction: column;
+  .links {
+    padding: 16px;
+    text-align: right;
+    a {
+      color: white;
+      margin-left: 16px;
+    }
+  }
   .title {
-    font-size: 2rem;
+    font-size: 4rem;
     color: white;
     padding: 8px;
+    text-align: center;
   }
 }

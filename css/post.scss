@@ -1,0 +1,15 @@
+---
+---
+
+@import 'base';
+@import 'min-header';
+
+.post-wrap {
+  display: flex;
+  .article {
+    max-width: 800px;
+    img {
+      width: 100%;
+    }
+  }
+}

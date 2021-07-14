@@ -36,6 +36,8 @@ destination: docs
 keep_files: [CNAME]
 sass:
   sass_dir: _sass
+gitHub: https://github.com/bits-and-bytes-videos
+youTube: https://www.youtube.com/channel/UC4w12aiYyyYGqFzIkBlHlBQ
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

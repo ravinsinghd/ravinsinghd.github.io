@@ -1,0 +1,25 @@
+@import 'color';
+
+.min-header {
+  border-bottom: 2px solid $primary-color;
+  background-color: $primary-color;
+  height: 48px;
+  .nav-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .title {
+      font-size: 1.5rem;
+      color: white;
+      padding: 0.5rem;
+    }
+    .links {
+      text-align: right;
+      a {
+        color: white;
+        margin-right: 1rem;
+      }
+    }
+  }
+}

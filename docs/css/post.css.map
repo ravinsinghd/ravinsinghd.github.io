@@ -1,0 +1,18 @@
+{
+	"version": 3,
+	"file": "post.css",
+	"sources": [
+		"post.scss",
+		"_sass/base.scss",
+		"_sass/min-header.scss",
+		"_sass/color.scss"
+	],
+	"sourcesContent": [
+		"@import 'base';\n@import 'min-header';\n\n.post-wrap {\n  display: flex;\n  .article {\n    max-width: 800px;\n    img {\n      width: 100%;\n    }\n  }\n}\n",
+		"html,\r\nbody {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Roboto', sans-serif;\r\n  font-size: 16px;\r\n}\r\n",
+		"@import 'color';\r\n\r\n.min-header {\r\n  border-bottom: 2px solid $primary-color;\r\n  background-color: $primary-color;\r\n  height: 48px;\r\n  .nav-wrap {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    .title {\r\n      font-size: 1.5rem;\r\n      color: white;\r\n      padding: 0.5rem;\r\n    }\r\n    .links {\r\n      text-align: right;\r\n      a {\r\n        color: white;\r\n        margin-right: 1rem;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+		"$primary-color: #3f51b5;\r\n"
+	],
+	"names": [],
+	"mappings": "ACAA,AAAA,IAAI,EACJ,IAAI,CAAC,EACH,MAAM,EAAE,CAAC,EACT,OAAO,EAAE,CAAC,EACV,WAAW,EAAE,oBAAoB,EACjC,SAAS,EAAE,IAAI,GAChB;;ACJD,AAAA,WAAW,CAAC,EACV,aAAa,EAAE,GAAG,CAAC,KAAK,CCHV,OAAO,EDIrB,gBAAgB,ECJF,OAAO,EDKrB,MAAM,EAAE,IAAI,GAmBb;;AAtBD,AAIE,WAJS,CAIT,SAAS,CAAC,EACR,OAAO,EAAE,IAAI,EACb,cAAc,EAAE,GAAG,EACnB,eAAe,EAAE,aAAa,EAC9B,WAAW,EAAE,MAAM,GAapB;;AArBH,AASI,WATO,CAIT,SAAS,CAKP,MAAM,CAAC,EACL,SAAS,EAAE,MAAM,EACjB,KAAK,EAAE,KAAK,EACZ,OAAO,EAAE,MAAM,GAChB;;AAbL,AAcI,WAdO,CAIT,SAAS,CAUP,MAAM,CAAC,EACL,UAAU,EAAE,KAAK,GAKlB;;AApBL,AAgBM,WAhBK,CAIT,SAAS,CAUP,MAAM,CAEJ,CAAC,CAAC,EACA,KAAK,EAAE,KAAK,EACZ,YAAY,EAAE,IAAI,GACnB;;AFlBP,AAAA,UAAU,CAAC,EACT,OAAO,EAAE,IAAI,GAOd;;AARD,AAEE,UAFQ,CAER,QAAQ,CAAC,EACP,SAAS,EAAE,KAAK,GAIjB;;AAPH,AAII,UAJM,CAER,QAAQ,CAEN,GAAG,CAAC,EACF,KAAK,EAAE,IAAI,GACZ"
+}

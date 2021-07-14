@@ -1,1 +1,152 @@
-This is test
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rust programming #2 | Cargo and Rust variables</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/post.css">
+  </head>
+  <body>
+    <header class="min-header">
+  <nav>
+    <div class="nav-wrap">
+      <div class="title">Bits and Bytes</div>
+      <div class="links">
+        <a href="https://www.youtube.com/channel/UC4w12aiYyyYGqFzIkBlHlBQ" target="_blank">YouTube</a>
+        <a href="https://github.com/bits-and-bytes-videos" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    <div class="post-wrap">
+      <div class="navigation">test</div>
+      <div class="article">
+        <h1>Rust programming #2 | Cargo and Rust variables</h1>
+        <article><h3 id="cargo">Cargo</h3>
+
+<p>In this series we are learning Rust. if you want to follow from the start please go to this link, where we have all the post in the Rust series. on this post we are going to learn about tool called cargo.</p>
+
+<p>Cargo is a command line tool which will help you to scaffolding,building,test and manage packages for the Rust programmes. If you are used npm for nodejs, then cargo is similar to the Rust ecosystem. If you followed the previous post and installed Rust then you system already has cargo installed. To verify you can run below command and see if it’s log the cargo version</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cargo <span class="nt">--version</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>if you see any errors, commend that errors I will help you out.</p>
+</blockquote>
+
+<h4 id="scaffolding-project">Scaffolding project</h4>
+
+<p>let’s create one project with cargo and will go through the default directory structure. Go to any empty folder and run below command</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cargo new hello_cargo
+</code></pre></div></div>
+
+<p>It should create one binary application called hello_cargo. Open the folder in any editor, you will see the project with default folders and files like below</p>
+
+<p><img src="/assets/images/posts/cargo_and_rust_variable/cargo_default_folder.png" alt="cargo default folders" /></p>
+
+<blockquote>
+  <p>Ignore the target folder and cargo.lock file. I am using Rust extension in my editor, It will auto build any Rust project open in the editor.</p>
+</blockquote>
+
+<p>Let’s go through the files one by one</p>
+
+<h4 id="cargotoml">Cargo.toml</h4>
+
+<p>Every application created with cargo will have Cargo.toml file. It used for manage application metadata,configuration and dependencies. Open Cargo.toml file you will see configuration like below.</p>
+
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[package]</span>
+<span class="py">name</span> <span class="p">=</span> <span class="s">"hello_cargo"</span>
+<span class="py">version</span> <span class="p">=</span> <span class="s">"0.1.0"</span>
+<span class="py">edition</span> <span class="p">=</span> <span class="s">"2018"</span>
+
+<span class="c"># See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html</span>
+
+<span class="nn">[dependencies]</span>
+</code></pre></div></div>
+
+<p>The name property use to define name of the application. Here it’s take from the cargo new command argument.</p>
+
+<p>The version property defines the version for this application. if you are creating library which published in crates, then this version number will be used to manage release cycle and dependency management. Will learn how to create and publish crates in upcoming posts. For now keep the default value.</p>
+
+<p>The edition property defines which edition of the Rust compiler you are going to use for compile the application. Will learn about editions in later posts for now keep the default value.</p>
+
+<p>The dependencies section used for listing your dependencies for this application. As of now we do not have any dependencies for our application, So it is empty. When we are start expanding our application we can pull dependencies from crates and use in our application.</p>
+
+<h4 id="srcmainrs">src/main.rs</h4>
+
+<p>Cargo created main file inside the src folder. Currently main file has default function which will print “hello world” when you run it. when working with cargo you should add all your source file inside the src folder.</p>
+
+<h4 id="build">Build</h4>
+
+<p>Now open command prompt and navigate to the application folder. Then run the below command</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cargo build
+</code></pre></div></div>
+
+<p>Now cargo, build your application and create executable in the folder called target.You can run that application by running the executable file as shown in the below image</p>
+
+<p><img src="/assets/images/posts/cargo_and_rust_variable/cargo_build.png" alt="cargo build" /></p>
+
+<p>In the command output this build mentioned as unoptimized. This is because cargo build by default will create the build with debug info and without much optimization. This build type should be used only for development and debug. This build type will be compile fast and run slow. For production you should compile application using below command</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cargo build <span class="nt">--release</span>
+</code></pre></div></div>
+
+<p>This build type will take additional time to compile the code but it will run fast.</p>
+
+<h4 id="run">Run</h4>
+
+<p>while you develop you may want to see the output quickly. For that you can use the run command as below.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cargo run
+</code></pre></div></div>
+
+<p>This command will compile your application and run the executable automatically.</p>
+
+<p><img src="/assets/images/posts/cargo_and_rust_variable/cargo_run.png" alt="cargo run" /></p>
+
+<p>Incase you want to check if the application compile successfully but don’t want to run the application, you can use the below command</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cargo check
+</code></pre></div></div>
+
+<p>This command will compile and report if any error in the application. But will not create executable or run application. This will save time when working on bigger application.</p>
+
+<p><img src="/assets/images/posts/cargo_and_rust_variable/cargo_check.png" alt="cargo check" /></p>
+
+<h3 id="rust-variables">Rust variables</h3>
+
+<p>Now let’s declare variable in our application and run it using cargo. open main.rs and type below code</p>
+
+<div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"The value of x {}"</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>let</strong> is the keyword we can use to declare the variable in Rust. Here we created variable called x and assign 10 as a value.</p>
+
+<p>In the next line we called print line macro. On this macro you can use the curly braces to print variables. So in run time rust will take the x value and print instead of the curly braces. Note i mentioned println! as macro not a function or keyword. Because while compile Rust compiler will update the println!. Will learn about macros in details in upcoming post.</p>
+
+<p>Now run this application using cargo run.</p>
+
+<p><img src="/assets/images/posts/cargo_and_rust_variable/cargo_variable.png" alt="cargo variable" /></p>
+
+<p>In Rust all variables by default created as immutable. In the next post will see what is immutable variable and how to use mutable &amp; const variables.</p>
+</article>
+      </div>
+      <div class="ad">test2</div>
+    </div>
+  </body>
+</html>

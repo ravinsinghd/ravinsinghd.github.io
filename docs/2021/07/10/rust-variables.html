@@ -1,1 +1,65 @@
-This is test
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rust programming #3 | Rust variables</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/post.css">
+  </head>
+  <body>
+    <header class="min-header">
+  <nav>
+    <div class="nav-wrap">
+      <div class="title">Bits and Bytes</div>
+      <div class="links">
+        <a href="https://www.youtube.com/channel/UC4w12aiYyyYGqFzIkBlHlBQ" target="_blank">YouTube</a>
+        <a href="https://github.com/bits-and-bytes-videos" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    <div class="post-wrap">
+      <div class="navigation">test</div>
+      <div class="article">
+        <h1>Rust programming #3 | Rust variables</h1>
+        <article><p>In this post will learn about Rust variables. on Rust all the variables by default is immutable. Immutable means, if you assign any value to variable then you can’t update value. In your code if your update the value of the immutable variable then compiler will throw error.</p>
+
+<p>let see a example below</p>
+
+<div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"The value of a {}"</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>if you are compile this code, then you will get error from compiler.</p>
+
+<p><img src="/assets/images/posts/rust_variable/rust_reassign_error.png" alt="Rust variable value re-assigned error" /></p>
+
+<p>As we can see the compiler showing error about value assigned twice to the immutable variable. Because of this immutable property compiler can effectively manage the memory of the variables. Also it will be easy to maintain when the variable used in the concurrent programing.</p>
+
+<p>Sometimes, you may want to make the variable mutable. For example when working with large data structures, updating the variable instead of creating new variable is more efficient.For such case you can use <strong><em>mut</em></strong> keyword as below.</p>
+
+<div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="k">mut</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"The value of a {}"</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"The value of a {}"</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</article>
+      </div>
+      <div class="ad">test2</div>
+    </div>
+  </body>
+</html>

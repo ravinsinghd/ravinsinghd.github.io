@@ -5,8 +5,6 @@ description: 'We will learn about how to run and build Rust programs using cargo
 tags: ['Rust', 'Cargo']
 ---
 
-### Cargo
-
 In this series we are learning Rust. if you want to follow from the start please go to this link, where we have all the post in the Rust series. on this post we are going to learn about tool called cargo.
 
 Cargo is a command line tool which will help you to scaffolding,building,test and manage packages for the Rust programmes. If you are used npm for nodejs, then cargo is similar to the Rust ecosystem. If you followed the previous post and installed Rust then you system already has cargo installed. To verify you can run below command and see if it's log the cargo version

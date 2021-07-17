@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="You can learn Rust, JavaScript, Html, CSS and more.All the posts are available as video in YouTube"
+    />
     <title>Bits and Bytes</title>
     {% include google-font.html %} <link rel="stylesheet" href="{{ "/css/home.css" | relative_url }}">
   </head>
@@ -16,7 +20,7 @@
         <div class="description">{{post.description}}</div>
         <div class="tags">
           {% for tag in post.tags %}
-          <span>{{tag}}</span>
+          <span class="tag">{{tag}}</span>
           {% endfor %}
         </div>
       </div>

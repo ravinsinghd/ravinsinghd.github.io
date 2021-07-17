@@ -1,6 +1,8 @@
 ---
 layout: post
 title: 'Rust programming #3 | Rust variables'
+description: 'We will learn about how to declare and use Rust variables'
+tags: ['Rust', 'Let', 'Const']
 ---
 
 In this post will learn about Rust variables. on Rust all the variables by default is immutable. Immutable means, if you assign any value to variable then you can't update value. In your code if your update the value of the immutable variable then compiler will throw error.

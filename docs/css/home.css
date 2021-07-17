@@ -16,10 +16,12 @@ blockquote { color: #828282; border-left: 4px solid #e8e8e8; font-size: 1rem; le
 
 .post-wrap { margin: 24px 48px 24px 48px; display: flex; flex-wrap: wrap; }
 
-.post { border: 1px solid #ccc; border-radius: 8px; padding: 1rem; margin: 0 1rem 1rem 0; max-width: 29%; }
+.post { border: 1px solid #ccc; border-radius: 8px; padding: 1rem; margin: 0 1rem 1rem 0; max-width: 29%; display: flex; flex-direction: column; box-shadow: 1px 1px 1px 0.5px #ccc, -1px -1px 1px 0.5px #ccc; }
 
 .post .title { font-size: 1.3rem; margin-bottom: 1rem; }
 
-.post .description { font-size: 1rem; margin-bottom: 1rem; }
+.post .description { font-size: 1rem; margin-bottom: 1rem; flex-grow: 1; }
+
+.post .tag { background-color: #ccc; padding: 8px; border-radius: 16px; font-size: 0.9rem; font-style: italic; }
 
 /*# sourceMappingURL=home.css.map */

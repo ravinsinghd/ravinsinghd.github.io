@@ -3,6 +3,7 @@ layout: post
 title: 'Rust programming #2 | Cargo and Rust variables'
 description: 'We will learn about how to run and build Rust programs using cargo tool and how to declare basic variables in Rust program'
 tags: ['Rust', 'Cargo']
+comments: true
 ---
 
 In this series we are learning Rust. if you want to follow from the start please go to this link, where we have all the post in the Rust series. on this post we are going to learn about tool called cargo.

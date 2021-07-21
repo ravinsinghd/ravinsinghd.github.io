@@ -6,9 +6,9 @@ tags: ['Rust', 'Let', 'Const']
 comments: true
 ---
 
-In this post will learn about Rust variables. on Rust all the variables by default is immutable. Immutable means, if you assign any value to variable then you can't update value. In your code if your update the value of the immutable variable then compiler will throw error.
+In this post, we shall learn about Rust variables. In Rust all the variables are made immutable by default. Immutable, means if you assign any value to a variable then you can't update the value. In your code, if you update the value of the immutable variable, then compiler will throw an error.
 
-let see a example below
+let see with an example below
 
 ```rs
 fn main() {
@@ -18,13 +18,13 @@ fn main() {
 }
 ```
 
-if you are compile this code, then you will get error from compiler.
+If you compile this code, then you will get an error from compiler.
 
 ![Rust variable value re-assigned error]({{ site.baseurl }}/assets/images/posts/rust_variable/rust_reassign_error.png)
 
-As we can see the compiler showing error about value assigned twice to the immutable variable. Because of this immutable property compiler can effectively manage the memory of the variables. Also it will be easy to maintain when the variable used in the concurrent programing.
+As we see, the compiler shows error about value being assigned twice to the immutable variable. Because of this immutable property, compiler can effectively manage the memory of the variables. Also it will be easy to maintain when the variable is used in the concurrent programming.
 
-Sometimes, you may want to make the variable mutable. For example when working with large data structures, updating the variable instead of creating new variable is more efficient.For such case you can use **_mut_** keyword as below.
+Sometimes, you may want to make the variable mutable. For example when working with large data structures, updating the variable instead of creating new variable is more efficient.For such a case you can use **_mut_** keyword as below.
 
 ```rs
 fn main() {
@@ -48,11 +48,11 @@ fn main() {
 }
 ```
 
-See, how the variable **B** is declared outside the main function. This is valid declaration it will work, but if you try to declare **let** variable outside the main function, you will get error. The **const** variable are available for entire program runtime within the scope they declared.So you can use this variables for keep some values which will not change in the program.
+See, how the variable **B** is declared outside the main function. This is a valid declaration and it will work, but if you try to declare **let** variable outside the main function, you will get error. The **const** variable are available for entire program runtime within the scope they're declared. So you can use this variables for those values which will not change thoroughtout the program.
 
-**Const** variables should have data type annotation. On the above example const variable **B** is annotated with **i32**, that means const B is a 32 bit integer.We can learn about different type of data types in next post. For now just remember **const** variable should have type annotation.
+**const** variables should have data type annotation. In the above example const variable **B** is annotated with **i32**, that means const B is a 32 bit integer.We can learn about different type of data types in next post. For now just remember **const** variable should have type annotation.
 
-**Const** variable value should constant expression. That means the value of the const variable should be available in the compile time itself, you can't call function and assign the return value as const variable value.
+**const** variable value should be a constant expression. That means the value of the const variable should be available in the compile time itself, you can't call function and assign the return value as const variable value.
 
 And as per the Rust naming convention it's recommended to name the **const** variable all upper case.You can use underscore between words. For example below are some of the **const** variable names.
 
@@ -64,7 +64,7 @@ const VALUE: i32 = 30;
 
 ### Shadowing
 
-In Rust we can override mutable variable value by shadowing the variable. For example, you got the some value from API, it's string type but you want that variable in the integer data type. For this use case we normally declare another one variable with the different name and assign the converted value to the variable. But in Rust we can do the following,
+In Rust we can override a mutable variable value by shadowing the variable. For example, you got the some value from API, and it is a string type but you want that variable in the integer data type. For this use case we normally declare another one variable with the different name and assign the converted value to the variable. But in Rust we can do the following,
 
 ```rs
 fn main() {
@@ -74,6 +74,6 @@ fn main() {
 }
 ```
 
-In the above program we are parse the string value to integer and assign the value to the same variable. But the difference is since we are updating the mutable variable value also we use the **let** keyword again. When you use the **let** keyword again in the variable which already exist Rust effectively create new variable in the memory with the same name and remove the existing one from memory. Since we are creating entirely new variable we can change the data type as well. That is why we are able to assign the integer value to the variable which declared as string type first.It will be useful feature for reuse the variable without declaring new variable.
+In the above program we are parse the string value to integer and assign the value to the same variable. But the difference is, since we are updating the mutable variable value, we also use the **let** keyword again. When you use the **let** keyword again in the variable which already exist Rust effectively create new variable in the memory with the same name and remove the existing one from memory. Since we are creating entirely new variable we can change the data type as well. That is why we are able to assign the integer value to the variable which was declared as string type at the start. Thus turning out to be a useful feature to reuse a variable without declaring a new one.
 
 Next post will dive deeper into Rust data types.Also this rust series available as video in my [YouTube channel](https://www.youtube.com/channel/UC4w12aiYyyYGqFzIkBlHlBQ).

@@ -3,7 +3,6 @@
 .header {
   border-bottom: 2px solid $primary-color;
   background-color: $primary-color;
-  height: 25vh;
   .nav-wrap {
     display: flex;
     flex-direction: column;
@@ -16,10 +15,13 @@
       }
     }
     .title {
-      font-size: 4rem;
+      font-size: 2.5rem;
       color: white;
-      padding: 8px;
+      margin: 1rem 0 1rem 0;
       text-align: center;
+      @media (min-width: $desktop-breakpoint) {
+        font-size: 4rem;
+      }
     }
   }
 }

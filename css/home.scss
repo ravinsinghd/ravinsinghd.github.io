@@ -5,20 +5,29 @@
 @import 'header';
 
 .post-wrap {
-  margin: 24px 48px 24px 48px;
+  margin: 1rem;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+
+  @media (min-width: $desktop-breakpoint) {
+    margin: 1.5rem 3rem 1.5rem 3rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 .post {
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 1rem;
-  margin: 0 1rem 1rem 0;
-  max-width: 29%;
   display: flex;
   flex-direction: column;
   box-shadow: 1px 1px 1px 0.5px #ccc, -1px -1px 1px 0.5px #ccc;
+  margin-bottom: 1rem;
+  @media (min-width: $desktop-breakpoint) {
+    max-width: 29%;
+    margin: 0 1rem 1rem 0;
+  }
   .title {
     font-size: 1.3rem;
     margin-bottom: 1rem;

@@ -60,6 +60,46 @@
     <span class="nd">println!</span><span class="p">(</span><span class="s">"The value of a {}"</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
+
+<p>The above code will be compiled without any issue. Since we mark the variable as mutable, we can update the value of the variable.</p>
+
+<h3 id="const">Const</h3>
+
+<p>Another variable type is <strong>const</strong>. Const is like let, but this value cannot be changed. This does not support <strong>mut</strong> keyword.Also const can be declared in any scope. For example you can declare const variable in the global scope. let see a example below,</p>
+
+<div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">const</span> <span class="n">B</span><span class="p">:</span> <span class="nb">i32</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"Hello, world!{}"</span><span class="p">,</span> <span class="n">B</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>See, how the variable <strong>B</strong> is declared outside the main function. This is valid declaration it will work, but if you try to declare <strong>let</strong> variable outside the main function, you will get error. The <strong>const</strong> variable are available for entire program runtime within the scope they declared.So you can use this variables for keep some values which will not change in the program.</p>
+
+<p><strong>Const</strong> variables should have data type annotation. On the above example const variable <strong>B</strong> is annotated with <strong>i32</strong>, that means const B is a 32 bit integer.We can learn about different type of data types in next post. For now just remember <strong>const</strong> variable should have type annotation.</p>
+
+<p><strong>Const</strong> variable value should constant expression. That means the value of the const variable should be available in the compile time itself, you can’t call function and assign the return value as const variable value.</p>
+
+<p>And as per the Rust naming convention it’s recommended to name the <strong>const</strong> variable all upper case.You can use underscore between words. For example below are some of the <strong>const</strong> variable names.</p>
+
+<div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">const</span> <span class="n">MAX_VALUE</span><span class="p">:</span> <span class="nb">i32</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<span class="k">const</span> <span class="n">MIN_VALUE</span><span class="p">:</span> <span class="nb">i32</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="k">const</span> <span class="n">VALUE</span><span class="p">:</span> <span class="nb">i32</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="shadowing">Shadowing</h3>
+
+<p>In Rust we can override mutable variable value by shadowing the variable. For example, you got the some value from API, it’s string type but you want that variable in the integer data type. For this use case we normally declare another one variable with the different name and assign the converted value to the variable. But in Rust we can do the following,</p>
+
+<div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">a</span> <span class="o">=</span> <span class="s">"10"</span><span class="p">;</span>
+    <span class="k">let</span> <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="py">.parse</span><span class="p">::</span><span class="o">&lt;</span><span class="nb">i32</span><span class="o">&gt;</span><span class="p">()</span><span class="nf">.unwrap</span><span class="p">();</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"{}"</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In the above program we are parse the string value to integer and assign the value to the same variable. But the difference is since we are updating the mutable variable value also we use the <strong>let</strong> keyword again. When you use the <strong>let</strong> keyword again in the variable which already exist Rust effectively create new variable in the memory with the same name and remove the existing one from memory. Since we are creating entirely new variable we can change the data type as well. That is why we are able to assign the integer value to the variable which declared as string type first.It will be useful feature for reuse the variable without declaring new variable.</p>
+
+<p>Next post will dive deeper into Rust data types.Also this rust series available as video in my <a href="https://www.youtube.com/channel/UC4w12aiYyyYGqFzIkBlHlBQ">YouTube channel</a>.</p>
 </article>
         
         <div id="disqus_thread"></div>

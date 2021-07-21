@@ -144,7 +144,9 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
 .post-wrap .external, .post-wrap .navigation { max-width: 250px; width: 250px; }
 
-.post-wrap .article { max-width: 800px; text-align: justify; }
+.post-wrap .article { max-width: 100%; text-align: justify; padding: 0 1rem; }
+
+@media (min-width: 992px) { .post-wrap .article { max-width: 800px; } }
 
 .post-wrap .article img { width: 100%; }
 

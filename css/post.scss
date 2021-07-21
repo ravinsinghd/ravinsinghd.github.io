@@ -14,8 +14,12 @@
     width: 250px;
   }
   .article {
-    max-width: 800px;
+    max-width: 100%;
     text-align: justify;
+    padding: 0 1rem;
+    @media (min-width: $desktop-breakpoint) {
+      max-width: 800px;
+    }
 
     img {
       width: 100%;

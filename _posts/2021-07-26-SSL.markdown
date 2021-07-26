@@ -1,16 +1,40 @@
 ---
 layout: post
-title: 'Complete guide for SSL/TLS and HTTPS'
+title: 'Complete guide for SSL/TLS and HTTPS (WIP)'
 description: 'A complete guide for SSL/TLS and HTTPS'
 tags: ['SSL', 'TLS', 'HTTPS']
-comments: true
+comments: false
 ---
 
-What is SSL/TLS/HTTPS?
-You heard about SSL or https and security experts say you should use websites with this SSL and https.in this post will see what is this SSL, TLS and https also it helps to keep you safe in online.
+### SSL/TLS/HTTPS?
 
-SSL/TLS:
-TLS is updated version of SSL protocol. When the protocol designed for specify how to provide network communication securty the first three versions of the protocol call SSL.
+You heard about SSL or https and security experts say you should use websites with this SSL and https.In this post will see what is this SSL, TLS and https also it helps to keep you safe in online.
 
-Client and server:
+### SSL/TLS
+
+TLS is updated version of SSL protocol. When the protocol designed to specify how to provide network communication security the first three versions of the protocol called SSL (Secure Socket Layer).From the fourth version the protocol renamed as TLS (Transport Layer Security).So in this post when I use SSL, that means I am taking about both SSL and TLS.
+
+### Client and server
+
 Any time when you use any online websites(ex: google,facebook etc), the system which serve the website are called server, and your browser (ex: Google chrome,firefox, etc) are called client.
+The server can be provide multiple services like websites, API, email, etc. Also client can be very different devices and technology's like browser, mobile app, smart tv, etc.
+
+### HTTPS
+
+When the client and server communicate both need common protocol to how to communicate. For example in real life when you meet some new person you both need to know a common language to communicate. For computers one of those common protocol is HTTP. For very long time computers used this protocol to communicate between them, but it has major problem. Which is, when data shared between client and server using HTTP, it will be shared as plain text. So anyone or any devices between client and server can view or modify the data which being shared.
+
+For legacy websites it is not a big problem. Since , they will not handling any sensitive data. But recent time we started using web for all kind of work such us banking transaction, Access our private emails etc. To keep this communication secure and private new protocol HTTPS was introduced.
+
+### How someone can view HTTP communication?
+
+You may have question how someone can see what I am sharing with my server?.Let me explain :). The internet is nothing but giant network which connect computers across globe. For this to work thousands of ISP (Internet service providers) setup the servers and connect those servers with each other. For example someone from asia to access the google server in USA, the request they are making has to go through their home ISP and hundreds of other in middle servers to final reach USA. If we are using plain text (HTTP) to communicate,anyone in this giant network can capture the request and view whats being shared.
+
+> TODO: image explain ISP communication
+
+### How HTTPS helps?
+
+The basic idea of HTTPS is encrypt the data being shared between client and server. So even if some one capture the data, they can't view those data without knowing the encryption key.
+
+But it can't be implemented using traditional method encryption. Because in normal encryption both parties (client & server) should know the encryption key and it should be unique between every client & server.For example consider a server communicating with 1000 clients. To keep the communication private and secure that server should have 1000 different encryption key. Also there should be way which server can pass the encryption key to client securely. For the above reason the traditional way of encryption will not work.
+
+### Public & private key encryption

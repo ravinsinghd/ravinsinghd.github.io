@@ -1,0 +1,16 @@
+---
+layout: post
+title: 'Complete guide for SSL/TLS and HTTPS'
+description: 'A complete guide for SSL/TLS and HTTPS'
+tags: ['SSL', 'TLS', 'HTTPS']
+comments: true
+---
+
+What is SSL/TLS/HTTPS?
+You heard about SSL or https and security experts say you should use websites with this SSL and https.in this post will see what is this SSL, TLS and https also it helps to keep you safe in online.
+
+SSL/TLS:
+TLS is updated version of SSL protocol. When the protocol designed for specify how to provide network communication securty the first three versions of the protocol call SSL.
+
+Client and server:
+Any time when you use any online websites(ex: google,facebook etc), the system which serve the website are called server, and your browser (ex: Google chrome,firefox, etc) are called client.

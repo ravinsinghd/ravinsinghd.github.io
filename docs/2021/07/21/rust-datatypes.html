@@ -34,7 +34,142 @@
       <div class="article">
         <h1>Rust programming #4 | Data types (WIP)</h1>
         <time class="date-time" datetime="2021-07-21 00:00:00 +0530">Wed, Jul 21, 21</time>
-        <article class="article-content">
+        <article class="article-content"><p>Rust is statically typed language. That means, all the variables should have data type associate with them in the compile time. In some case Rust will infer the data types from variable value.But if more than one datatype possible for value, then the compiler will force developer to explicitly assign the data type for the variable.</p>
+
+<p>Below are the list of data types available in Rust</p>
+
+<ul>
+  <li>Integer</li>
+  <li>Boolean</li>
+  <li>Char</li>
+  <li>Floating-point number</li>
+  <li>Tuple</li>
+  <li>Array</li>
+</ul>
+
+<h3 id="integer">Integer</h3>
+
+<p>Integer data type used for storing signed and unsigned integer value. Signed means the number has Negative or positive sign associated with them.For example -10, -2, +20 are signed integer.Normally we will use sign, only for negative number. if the integer does not has any sign then that is consider as positive integer.For signed and unsigned integer we have separate data types.</p>
+
+<h4 id="signed-integer">Signed Integer</h4>
+
+<p>Singed integers can store positive and negative integers.Below code example has different signed integer data types</p>
+
+<div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">a</span><span class="p">:</span> <span class="nb">i8</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="k">let</span> <span class="n">b</span><span class="p">:</span> <span class="nb">i16</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span><span class="p">;</span>
+    <span class="k">let</span> <span class="n">c</span><span class="p">:</span> <span class="nb">i32</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="k">let</span> <span class="n">d</span><span class="p">:</span> <span class="nb">i64</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+    <span class="k">let</span> <span class="n">e</span><span class="p">:</span> <span class="n">i128</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+    <span class="k">let</span> <span class="n">f</span><span class="p">:</span> <span class="nb">isize</span> <span class="o">=</span> <span class="o">-</span><span class="mi">40</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>All the signed integer data types are combination of <strong>i</strong> and the space it can take. For <strong>i8</strong> integer will take up to 8 bit space, <strong>i16</strong> it takes upto 16 bit space and so on. The last data type, <strong>isize</strong> means it take space based on the system architecture. For example if you have 32 bit machine, it will take upto 32 bit space. If you have 64 bit machine it will take upto 64 bit space.</p>
+
+<p>if you did not mention any data type for integer Rust will assign default data type <strong>i32</strong>. For example, in the below code block the data type for the variable <strong>a</strong> will be infer as <strong>i32</strong>.</p>
+
+<div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="unsigned-integer">Unsigned integer</h4>
+
+<p>Unsigned integers can store only positive integers.Below code example has different unsigned integer data type</p>
+
+<div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">a</span><span class="p">:</span> <span class="nb">u8</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="k">let</span> <span class="n">b</span><span class="p">:</span> <span class="nb">u16</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+    <span class="k">let</span> <span class="n">c</span><span class="p">:</span> <span class="nb">u32</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="k">let</span> <span class="n">d</span><span class="p">:</span> <span class="nb">u64</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+    <span class="k">let</span> <span class="n">e</span><span class="p">:</span> <span class="n">u128</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+    <span class="k">let</span> <span class="n">f</span><span class="p">:</span> <span class="nb">usize</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>All unsigned integers data types are combination of <strong>u</strong> and the bit space it can take. Unsigned integers have bit space same as singed integer, from 8 to 128 bit and size which will take bit space based on system architecture.</p>
+
+<h3 id="boolean">Boolean</h3>
+
+<p>Boolean data type can store value either True or False. This data type mostly used as flag. For example we can use boolean as below</p>
+
+<div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">a</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+    <span class="k">let</span> <span class="n">b</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="char">Char</h3>
+
+<p>Char data type used for storing single letter. You can’t store more than one letter in char data type. For that we have to use string data type. We will learn about string data type in separate post. In char data type you can store all valid unicode character.</p>
+
+<div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">a</span> <span class="o">=</span> <span class="sc">'a'</span><span class="p">;</span>
+    <span class="k">let</span> <span class="n">b</span><span class="p">:</span> <span class="nb">char</span> <span class="o">=</span> <span class="sc">'😊'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="floating-point-number">Floating-point number</h3>
+
+<p>Floating point number used for store number with decimal points.For example 1.3 or 3.14. Below is the example code</p>
+
+<div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">a</span> <span class="o">=</span> <span class="mf">1.3</span><span class="p">;</span>
+    <span class="k">let</span> <span class="n">b</span><span class="p">:</span> <span class="nb">f64</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+    <span class="k">let</span> <span class="n">c</span><span class="p">:</span> <span class="nb">f32</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.14</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="tuple">Tuple</h3>
+
+<p>All the above data types we learned are called <strong>scalar data types</strong>. Tuple and Array data types are called <strong>compound data types</strong>.The difference between scalar and Compound data types is scalar data types can hold single value, but compound data types can have more than one value per variable. Will see Tuple first.</p>
+
+<div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s">"Test"</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">);</span>
+    <span class="k">let</span> <span class="n">b</span><span class="p">:</span> <span class="p">(</span><span class="nb">u32</span><span class="p">,</span> <span class="nb">f64</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>A tuple can hold multiple values with different data types. We can access the individual values from tuple by destructuring or using dot (.) as shown blow.</p>
+
+<div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s">"Test"</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">);</span>
+    <span class="k">let</span> <span class="n">b</span><span class="p">:</span> <span class="p">(</span><span class="nb">u32</span><span class="p">,</span> <span class="nb">f64</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">);</span>
+    <span class="k">let</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"{}"</span><span class="p">,</span> <span class="n">a</span><span class="na">.0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong><em>let (c, d, e) = a</em></strong> in this code we are breaking the tuple to individual value and assign to the variables. After this we can use this variable c,d,e like any other variable. <strong><em>println!(“{}”, a.0);</em></strong> In this code we are accessing the tuple value by it’s index. <strong><em>a.0</em></strong> will return the first value from the tuple.</p>
+
+<h3 id="array">Array</h3>
+
+<p>Array same like tuple, it can hold multiple values. But array requires all the value are in same data type. Like tuple we can’t put different type of data types in array.</p>
+
+<div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+    <span class="k">let</span> <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">;</span> <span class="mi">5</span><span class="p">];</span>
+    <span class="k">let</span> <span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="sc">'a'</span><span class="p">,</span> <span class="sc">'b'</span><span class="p">,</span> <span class="sc">'c'</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>On the above example <strong>a</strong> is an array containing five i32 values. As we learn before this variable data types should be same. In the next line we are creating new array with five values all are 3. This line is same as writing <strong><em>let b = [3, 3, 3, 3, 3];</em></strong>. On third line we have array with all value are in char data type.</p>
+
+<p>We can access the array value using the index of the value.</p>
+
+<div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+    <span class="k">let</span> <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">;</span> <span class="mi">5</span><span class="p">];</span>
+    <span class="k">let</span> <span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="sc">'a'</span><span class="p">,</span> <span class="sc">'b'</span><span class="p">,</span> <span class="sc">'c'</span><span class="p">];</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"{}"</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"{}"</span><span class="p">,</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The above two compound data types are fixed length. That means, once we declare this variable we can’t grow or shrink the variable size. For that type of use case we have another data type called <strong>vector</strong>. We will learn about the vector data type in separate post.</p>
+
+<p><strong>if you have any doubt or suggestion please comment. I will address them.</strong></p>
 </article>
         
         <div id="disqus_thread"></div>

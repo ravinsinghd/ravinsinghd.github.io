@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Rust programming #4 | Data types (WIP)'
+title: 'Rust programming #4 | Data types'
 description: 'We will learn about the list of data types available in Rust and when to use what data types'
 tags: ['Rust', 'Data Types']
 comments: true

@@ -14,7 +14,7 @@ blockquote { color: #828282; border-left: 4px solid #e8e8e8; letter-spacing: -1p
 
 .min-header .nav-wrap .links a { color: white; margin-right: 1rem; }
 
-pre, code { font-size: 0.9375em; border-radius: 3px; background-color: #eeeeff; }
+pre, code { font-size: 0.9375em; border-radius: 3px; background-color: #eeeeff; line-height: 2rem; }
 
 code { padding: 1px 5px; }
 

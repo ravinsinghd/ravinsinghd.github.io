@@ -8,6 +8,13 @@ comments: true
 
 Rust is a statically typed language. That means, all the variables should have a data type associate with them in the compile time. In some cases, Rust will infer the data types from variable values. But if more than one data type is possible for value, then the compiler will force the developer to explicitly assign the data type for the variable.
 
+> if you like to learn this topic as video, you can watch it below.
+
+<div class="video-container">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pGLqwOJYu3E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Below is the list of data types available in Rust
 
 - Integer

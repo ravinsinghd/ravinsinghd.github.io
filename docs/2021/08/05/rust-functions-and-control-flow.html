@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="We will learn about how to declare and use functions in Rust. Also will learn about how to use the control flow such as while,loop,for and if in Rust " />
+    <title>Rust programming #5 | Functions and control flow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+  rel="stylesheet"
+/>
+ <link rel="stylesheet" href="/css/post.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5222307304042215"
+     crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header class="min-header">
+  <nav class="nav-wrap">
+    <div class="title">
+      <a href="/">Bits and Bytes</a>
+    </div>
+    <div class="links">
+      <a href="https://www.youtube.com/channel/UC4w12aiYyyYGqFzIkBlHlBQ" rel="noopener" target="_blank">YouTube</a>
+      <a href="https://github.com/bits-and-bytes-videos" rel="noopener" target="_blank">GitHub</a>
+    </div>
+  </nav>
+</header>
+
+
+    <div class="post-wrap">
+      <div class="navigation"></div>
+      <div class="article">
+        <h1>Rust programming #5 | Functions and control flow</h1>
+        <time class="date-time" datetime="2021-08-05 00:00:00 +0530">Thu, Aug 05, 21</time>
+        <article class="article-content"><p>On this Rust series today we are going to learn about how to use the functions and control flow. such as, loop, while, for and if.Functions are basic building block of Rust. if you ever created and run a Rust program you already wrote functions. Lets see an example</p>
+
+<div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"Hello world!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Here we have function called <em>main</em>. The function will be declared using <em>fn</em> keyword. This is a special function, you need have in your program. This will act as entry point for the program execution. let see an example which will have more than one functions.</p>
+
+<div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"Hello world!"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">fn</span> <span class="nf">get_new_world</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="o">&amp;</span><span class="nv">'static</span> <span class="nb">str</span> <span class="p">{</span>
+    <span class="s">"World"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Above example we have a function called <em>get_new_world</em>. As you can we are using snake case for function names. Rust naming convention recommend to use snake case for function names. After function we have arrow (-&gt;), which is used for declare the return time of the function. For this function the return type is string literal with static life time. we will learn about <em>string</em> and <em>lifetimes</em> in upcoming post.for now just consider this function will return some string when it’s called.</p>
+
+<p>Next line we have string <em>World</em>. But we did not return the string. if you compile and run this code,it will execute without any problem. That because when we have expression as last line in function that return value will be automatically return when the function called.</p>
+
+<p>if you are confused about what is expression, don’t worry 😀, let see that in detail. Rust functions consist of statements and expressions.statements are instruction the perform some operation but it will not return any value. But expressions will return value. So <code class="language-plaintext highlighter-rouge">let a = 10;</code> is the statement. Because all this instruction do is, create a variable ‘a’ and assigning value 10 to the variable.It does not return any value. let see instruction <code class="language-plaintext highlighter-rouge">7 + 3</code>. This instruction perform addition operation and return value as ‘10’. This instructions called as expression.</p>
+
+<p>So,hope you are clear about statement and expression.Now, comeback to our <em>get_new_world</em> function, the instruction <code class="language-plaintext highlighter-rouge">World</code> is a expression because it’s create string literal called <em>world</em> and return it. So when ever you have expression as a lost line in your program without semicolon(;), Rust will consider that value as function return value.</p>
+
+<h4 id="function-call">Function call</h4>
+
+<p>Now we have function called <em>get_new_world</em> and it returns string literal. Lets call this function in our main function.</p>
+
+<div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">world</span> <span class="o">=</span> <span class="nf">get_new_world</span><span class="p">();</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"Hello {}!"</span><span class="p">,</span> <span class="n">world</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">fn</span> <span class="nf">get_new_world</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="o">&amp;</span><span class="nv">'static</span> <span class="nb">str</span> <span class="p">{</span>
+    <span class="s">"World"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>To call a function we should use function name and set of parentheses at end of the function name. So we are calling function <em>get_new_world</em> and assign the return value to variable <code class="language-plaintext highlighter-rouge">world</code>.Since the function returning value we can assign the return value to some variable. incase the function does not return any value then we can’t assign. Compiler will trow error in that case.</p>
+
+<p>Also, our <em>get_new_world</em> function is defined</p>
+</article>
+        
+      </div>
+      <div class="external"></div>
+    </div>
+  </body>
+</html>

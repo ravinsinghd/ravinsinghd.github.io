@@ -1,8 +1,9 @@
 ---
 layout: post
-title: 'Rust programming #5 | Functions and control flow'
-description: 'We will learn about how to declare and use functions in Rust. Also will learn about how to use the control flow such as while,loop,for and if in Rust '
-tags: ['Rust', 'functions', 'for', 'if', 'while']
+title: 'Rust programming #5 | Functions'
+description: 'We will learn about how to declare and use functions in Rust.'
+tags: ['Rust', 'functions']
+slug: rust-function
 comments: false
 ---
 
@@ -49,6 +50,25 @@ fn get_new_world() -> &'static str {
 }
 ```
 
-To call a function we should use function name and set of parentheses at end of the function name. So we are calling function _get_new_world_ and assign the return value to variable `world`.Since the function returning value we can assign the return value to some variable. incase the function does not return any value then we can't assign. Compiler will trow error in that case.
+To call a function we should use function name and set of parentheses at end of the function name. we are calling function `get_new_world` and assign the return value to variable `world`.Since the function returning value we can assign the return value to some variable. incase the function does not return any value then we can't assign. Compiler will trow error in that case.
 
-Also, our _get_new_world_ function is defined
+Also, our `get_new_world` function is defined after main function. Some languages will not allow calling functions which defined after the calling function.But Rust does not care where you defined the function as long as you have valid function in that file you can call that.
+
+#### Function argument
+
+Function can accept parameter. When define function you can define some parameter in function signature.This parameter should have data type associate with them, so Rust can validate the parameter when function get called in different part of the code.let see an example
+
+```rs
+fn main() {
+    let result = multiply_by_5(10);
+    println!("Value is {}", result);
+}
+
+fn multiply_by_5(value: i32) -> i32 {
+    value * 5
+}
+```
+
+Here we have function called `multiply_by_5` which will multiply any value it received as parameter with 5 and return the resulting value. While define this parameter we have also mentioned data type it will accept. So when any other parts of the code call this function it should pass `i32` datatype value as parameter otherwise compiler will throw error.
+
+Great!!!. Now we have most of the basic topic covert.Next post will learn about how to control the flow of our program execution. Please comment your feedback and suggestions, it will be helpful to improve this series.

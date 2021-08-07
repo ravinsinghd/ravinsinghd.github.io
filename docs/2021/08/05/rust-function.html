@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="We will learn about how to declare and use functions in Rust. Also will learn about how to use the control flow such as while,loop,for and if in Rust " />
-    <title>Rust programming #5 | Functions and control flow</title>
+    <meta name="description" content="We will learn about how to declare and use functions in Rust." />
+    <title>Rust programming #5 | Functions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
@@ -32,7 +32,7 @@
     <div class="post-wrap">
       <div class="navigation"></div>
       <div class="article">
-        <h1>Rust programming #5 | Functions and control flow</h1>
+        <h1>Rust programming #5 | Functions</h1>
         <time class="date-time" datetime="2021-08-05 00:00:00 +0530">Thu, Aug 05, 21</time>
         <article class="article-content"><p>On this Rust series today we are going to learn about how to use the functions and control flow. such as, loop, while, for and if.Functions are basic building block of Rust. if you ever created and run a Rust program you already wrote functions. Lets see an example</p>
 
@@ -74,9 +74,27 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>To call a function we should use function name and set of parentheses at end of the function name. So we are calling function <em>get_new_world</em> and assign the return value to variable <code class="language-plaintext highlighter-rouge">world</code>.Since the function returning value we can assign the return value to some variable. incase the function does not return any value then we can’t assign. Compiler will trow error in that case.</p>
+<p>To call a function we should use function name and set of parentheses at end of the function name. we are calling function <code class="language-plaintext highlighter-rouge">get_new_world</code> and assign the return value to variable <code class="language-plaintext highlighter-rouge">world</code>.Since the function returning value we can assign the return value to some variable. incase the function does not return any value then we can’t assign. Compiler will trow error in that case.</p>
 
-<p>Also, our <em>get_new_world</em> function is defined</p>
+<p>Also, our <code class="language-plaintext highlighter-rouge">get_new_world</code> function is defined after main function. Some languages will not allow calling functions which defined after the calling function.But Rust does not care where you defined the function as long as you have valid function in that file you can call that.</p>
+
+<h4 id="function-argument">Function argument</h4>
+
+<p>Function can accept parameter. When define function you can define some parameter in function signature.This parameter should have data type associate with them, so Rust can validate the parameter when function get called in different part of the code.let see an example</p>
+
+<div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">result</span> <span class="o">=</span> <span class="nf">multiply_by_5</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"Value is {}"</span><span class="p">,</span> <span class="n">result</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">fn</span> <span class="nf">multiply_by_5</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">i32</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">i32</span> <span class="p">{</span>
+    <span class="n">value</span> <span class="o">*</span> <span class="mi">5</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Here we have function called <code class="language-plaintext highlighter-rouge">multiply_by_5</code> which will multiply any value it received as parameter with 5 and return the resulting value. While define this parameter we have also mentioned data type it will accept. So when any other parts of the code call this function it should pass <code class="language-plaintext highlighter-rouge">i32</code> datatype value as parameter otherwise compiler will throw error.</p>
+
+<p>Great!!!. Now we have most of the basic topic covert.Next post will learn about how to control the flow of our program execution. Please comment your feedback and suggestions, it will be helpful to improve this series.</p>
 </article>
         
       </div>

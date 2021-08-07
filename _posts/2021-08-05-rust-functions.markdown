@@ -4,7 +4,7 @@ title: 'Rust programming #5 | Functions'
 description: 'We will learn about how to declare and use functions in Rust.'
 tags: ['Rust', 'functions']
 slug: rust-function
-comments: false
+comments: true
 ---
 
 On this Rust series today we are going to learn about how to use the functions and control flow. such as, loop, while, for and if.Functions are basic building block of Rust. if you ever created and run a Rust program you already wrote functions. Lets see an example

@@ -34,14 +34,14 @@
       <div class="article">
         <h1>Rust programming #5 | Functions</h1>
         <time class="date-time" datetime="2021-08-05 00:00:00 +0530">Thu, Aug 05, 21</time>
-        <article class="article-content"><p>On this Rust series today we are going to learn about how to use the functions and control flow. such as, loop, while, for and if.Functions are basic building block of Rust. if you ever created and run a Rust program you already wrote functions. Lets see an example</p>
+        <article class="article-content"><p>In this Rust series today we are going to learn about how to use the functions. Functions are the basic building block of Rust. if you ever created and run a Rust program you already wrote functions. Let’s see an example</p>
 
 <div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="nd">println!</span><span class="p">(</span><span class="s">"Hello world!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Here we have function called <em>main</em>. The function will be declared using <em>fn</em> keyword. This is a special function, you need have in your program. This will act as entry point for the program execution. let see an example which will have more than one functions.</p>
+<p>Here we have a function called <code class="language-plaintext highlighter-rouge">main</code>. The function will be declared using the <code class="language-plaintext highlighter-rouge">fn</code> keyword. This is a special function, you need to have in your program. This will act as an entry point for the program execution. let see an example that will have more than one function.</p>
 
 <div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="nd">println!</span><span class="p">(</span><span class="s">"Hello world!"</span><span class="p">);</span>
@@ -52,17 +52,17 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Above example we have a function called <em>get_new_world</em>. As you can we are using snake case for function names. Rust naming convention recommend to use snake case for function names. After function we have arrow (-&gt;), which is used for declare the return time of the function. For this function the return type is string literal with static life time. we will learn about <em>string</em> and <em>lifetimes</em> in upcoming post.for now just consider this function will return some string when it’s called.</p>
+<p>Above example, we have a function called <code class="language-plaintext highlighter-rouge">get_new_world</code>. As you can see we are using snake case for function names. Rust naming convention recommends using snake case for function names. After function name, we have an arrow (-&gt;), which is used to declare the return type of the function. For this function, the return type is a string literal with a static lifetime. we will learn more about <code class="language-plaintext highlighter-rouge">string</code> and <code class="language-plaintext highlighter-rouge">lifetimes</code> in the upcoming post. For now, just consider, this function will return some string when it’s called.</p>
 
-<p>Next line we have string <em>World</em>. But we did not return the string. if you compile and run this code,it will execute without any problem. That because when we have expression as last line in function that return value will be automatically return when the function called.</p>
+<p>Next line we have the string <code class="language-plaintext highlighter-rouge">World</code>. But we did not return or do any operation on the string. if you compile and run this code, It will execute without any problem. That is because when we have expression as the last line in function that will be considered as function return value.</p>
 
-<p>if you are confused about what is expression, don’t worry 😀, let see that in detail. Rust functions consist of statements and expressions.statements are instruction the perform some operation but it will not return any value. But expressions will return value. So <code class="language-plaintext highlighter-rouge">let a = 10;</code> is the statement. Because all this instruction do is, create a variable ‘a’ and assigning value 10 to the variable.It does not return any value. let see instruction <code class="language-plaintext highlighter-rouge">7 + 3</code>. This instruction perform addition operation and return value as ‘10’. This instructions called as expression.</p>
+<p>if you are confused about what is expression, don’t worry 😀. let see that in detail. Rust functions consist of statements and expressions. Statements are instructions the perform some operation but it will not return any value. But expressions will return value. So <code class="language-plaintext highlighter-rouge">let a = 10;</code> is the statement. Because all this instruction does is, create a variable <code class="language-plaintext highlighter-rouge">a</code> and assigning value 10 to the variable. It does not return any value. let see instruction <code class="language-plaintext highlighter-rouge">7 + 3</code>. This instruction performs an addition operation and returns a value as ‘10’. These instructions are called expressions.</p>
 
-<p>So,hope you are clear about statement and expression.Now, comeback to our <em>get_new_world</em> function, the instruction <code class="language-plaintext highlighter-rouge">World</code> is a expression because it’s create string literal called <em>world</em> and return it. So when ever you have expression as a lost line in your program without semicolon(;), Rust will consider that value as function return value.</p>
+<p>Hope now you are clear about the statement and expression.Now, come back to our <code class="language-plaintext highlighter-rouge">get_new_world</code> function. The instruction <code class="language-plaintext highlighter-rouge">World</code> is an expression because it creates a string literal called <code class="language-plaintext highlighter-rouge">world</code> and returns it. So whenever you have expression as a lost line in your program without semicolon(;), Rust will consider that value as function return value.</p>
 
 <h4 id="function-call">Function call</h4>
 
-<p>Now we have function called <em>get_new_world</em> and it returns string literal. Lets call this function in our main function.</p>
+<p>Now we have a function called <code class="language-plaintext highlighter-rouge">get_new_world</code> and it returns string literal. Let’s call this function, in our main function.</p>
 
 <div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">let</span> <span class="n">world</span> <span class="o">=</span> <span class="nf">get_new_world</span><span class="p">();</span>
@@ -74,13 +74,13 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>To call a function we should use function name and set of parentheses at end of the function name. we are calling function <code class="language-plaintext highlighter-rouge">get_new_world</code> and assign the return value to variable <code class="language-plaintext highlighter-rouge">world</code>.Since the function returning value we can assign the return value to some variable. incase the function does not return any value then we can’t assign. Compiler will trow error in that case.</p>
+<p>To call a function we should use the function name and set of parentheses at end of the function name. we are calling function <code class="language-plaintext highlighter-rouge">get_new_world</code> and assign the return value to variable <code class="language-plaintext highlighter-rouge">world</code>.Since the function returns a value we can assign the return value to some variable. incase the function does not return any value then we can’t assign. The compiler will throw an error in that case.</p>
 
-<p>Also, our <code class="language-plaintext highlighter-rouge">get_new_world</code> function is defined after main function. Some languages will not allow calling functions which defined after the calling function.But Rust does not care where you defined the function as long as you have valid function in that file you can call that.</p>
+<p>Also, our <code class="language-plaintext highlighter-rouge">get_new_world</code> function is defined after main function. Some languages will not allow calling a function that is defined after the calling function. But Rust does not care where you defined the function as long as you have a valid function in that file you can call that.</p>
 
 <h4 id="function-argument">Function argument</h4>
 
-<p>Function can accept parameter. When define function you can define some parameter in function signature.This parameter should have data type associate with them, so Rust can validate the parameter when function get called in different part of the code.let see an example</p>
+<p>A function can accept parameters. When defining a function we can define some parameters in the function signature. This parameter should have a data type associate with them, so Rust can validate the parameter when functions get called in a different part of the code. let see an example</p>
 
 <div class="language-rs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">let</span> <span class="n">result</span> <span class="o">=</span> <span class="nf">multiply_by_5</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
@@ -92,9 +92,9 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Here we have function called <code class="language-plaintext highlighter-rouge">multiply_by_5</code> which will multiply any value it received as parameter with 5 and return the resulting value. While define this parameter we have also mentioned data type it will accept. So when any other parts of the code call this function it should pass <code class="language-plaintext highlighter-rouge">i32</code> datatype value as parameter otherwise compiler will throw error.</p>
+<p>Here we have a function called <code class="language-plaintext highlighter-rouge">multiply_by_5</code> which will multiply any value it received as a parameter with 5 and return the resulting value. While defining this parameter we have also mentioned the data type it will accept. So when any other parts of the code call this function it should pass the <code class="language-plaintext highlighter-rouge">i32</code> datatype value as a parameter otherwise the compiler will throw an error.</p>
 
-<p>Great!!!. Now we have most of the basic topic covert.Next post will learn about how to control the flow of our program execution. Please comment your feedback and suggestions, it will be helpful to improve this series.</p>
+<p>Great!!!. Now we have most of the basic topics covert in Rust. The next post will learn about how to control the flow of our program execution. Please comment with your feedback and suggestions, it will be helpful to improve this series.</p>
 </article>
         
         <div id="disqus_thread"></div>
